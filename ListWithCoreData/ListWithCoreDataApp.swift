@@ -9,12 +9,18 @@ import SwiftUI
 
 @main
 struct ListWithCoreDataApp: App {
+    
+    // MARK: - Properties
+    
     let persistenceController = PersistenceController.shared
-
+    
+    // MARK: - Body
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            PostsView()
+                .environment(\.managedObjectContext,
+                              persistenceController.container.viewContext)
         }
     }
 }
